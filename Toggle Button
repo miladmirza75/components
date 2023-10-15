@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Button</title>
+</head>
+<body>
+    <div class="toggle-button">
+        <div class="inner-circle"></div>
+    </div>
+</body>
+</html>
+<style>
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e5e1cf;
+}
+
+.toggle-button {
+    width: 100px;
+    height: 50px;
+    background-color: #F2F2F7; /* Gray background when inactive */
+    border-radius: 25px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s; /* transition for smooth color change */
+}
+
+.inner-circle {
+    width: 40px;
+    height: 40px;
+    background-color: #fff; /* White circle */
+    border-radius: 50%;
+    position: absolute;
+    left: 5px;            
+    top: 5px;            
+    transition: 0.3s;
+}
+
+.toggle-button.active {
+    background-color: #34C759; /* Green background when active */
+}
+
+.toggle-button.active .inner-circle {
+    left: 55px;
+}
+
+</style>
+<script>
+    const toggleButton = document.querySelector('.toggle-button');
+    toggleButton.addEventListener('click', () => {
+        toggleButton.classList.toggle('active');
+    });
+</script>
